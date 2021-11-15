@@ -1,0 +1,64 @@
+{
+  "root": "packages/personal-service",
+  "sourceRoot": "packages/personal-service/src",
+  "projectType": "application",
+  "targets": {
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "packages/personal-service"
+      }
+    },
+    "integration-test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "mvn verify"
+        ],
+        "cwd": "packages/personal-service",
+        "parallel": false
+      }
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "packages/personal-service"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "packages/personal-service"
+      }
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "packages/personal-service"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "mvn package -Dmaven.test.skip=true"
+        ],
+        "cwd": "packages/personal-service",
+        "parallel": false
+      }
+    },
+    "buildImage": {
+      "executor": "@nxrocks/nx-spring-boot:buildImage",
+      "options": {
+        "root": "packages/personal-service"
+      }
+    },
+    "buildInfo": {
+      "executor": "@nxrocks/nx-spring-boot:buildInfo",
+      "options": {
+        "root": "packages/personal-service"
+      }
+    }
+  },
+  "tags": []
+}

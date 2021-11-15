@@ -1,0 +1,14 @@
+{
+  "baseUrl": "http://localhost:8080/",
+  "testFiles": "**/*.audits.ts",
+  "supportFile": "src/support/index.ts",
+  "video": false,
+  "integrationFolder": "src/integration",
+  "fixturesFolder": "src/fixtures",
+  "pluginsFile": "src/plugins/index.ts",
+  "screenshotsFolder": "../../dist/packages/personal-e2e/screenshots",
+  "chromeWebSecurity": true,
+  "viewportWidth": 1200,
+  "viewportHeight": 720,
+  "retries": 2
+}

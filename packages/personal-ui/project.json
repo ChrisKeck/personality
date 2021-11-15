@@ -1,0 +1,118 @@
+{
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    },
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "root": "packages/personal-ui",
+  "sourceRoot": "packages/personal-ui/src",
+  "prefix": "jhi",
+  "targets": {
+    "build": {
+      "executor": "@angular-builders/custom-webpack:browser",
+      "options": {
+        "customWebpackConfig": {
+          "path": "packages/personal-ui/webpack/webpack.custom.js"
+        },
+        "outputPath": "dist/packages/personal-ui",
+        "index": "packages/personal-ui/src/index.html",
+        "main": "packages/personal-ui/src/main.ts",
+        "polyfills": "packages/personal-ui/src/polyfills.ts",
+        "tsConfig": "packages/personal-ui/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "packages/personal-ui/src/content",
+          "packages/personal-ui/src/favicon.ico",
+          "packages/personal-ui/src/manifest.webapp",
+          "packages/personal-ui/src/robots.txt",
+          {
+            "glob": "*.{js,css,html,png}",
+            "input": "node_modules/swagger-ui-dist",
+            "output": "swagger-ui",
+            "ignore": [
+              "**/index.html"
+            ]
+          },
+          {
+            "glob": "axios.min.js",
+            "input": "node_modules/axios/dist",
+            "output": "swagger-ui"
+          },
+          {
+            "glob": "**/*",
+            "input": "packages/personal-ui/src/swagger-ui/",
+            "output": "swagger-ui"
+          }
+        ],
+        "styles": [
+          "packages/personal-ui/src/content/scss/vendor.scss",
+          "packages/personal-ui/src/content/scss/global.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "serviceWorker": true,
+          "ngswConfigPath": "ngsw-config.json",
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ]
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        },
+        "instrumenter": {}
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-builders/custom-webpack:dev-server",
+      "options": {
+        "browserTarget": "jhipster:build:development",
+        "port": 4200
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "jhipster:build:production"
+        },
+        "development": {
+          "browserTarget": "jhipster:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "test": {
+      "executor": "@angular-builders/jest:run",
+      "options": {
+        "configPath": "jest.conf.js",
+        "tsConfig": "packages/personal-ui/tsconfig.spec.json",
+        "karmaConfig": "packages/personal-ui/karma.conf.js"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@personal/devops",
+  "scripts": {
+    "test": "node index.js"
+  }
+}

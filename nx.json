@@ -1,0 +1,32 @@
+{
+  "npmScope": "personal",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "workspaceLayout": {
+    "libsDir": "packages",
+    "appsDir": "packages"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
+  },
+  "cli": {
+    "packageManager": "npm",
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "personal-ui",
+  "plugins": ["@nxrocks/nx-spring-boot"]
+}
