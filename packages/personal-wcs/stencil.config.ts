@@ -4,20 +4,19 @@ import { sass } from '@stencil/sass';
 
 import { postcss } from '@stencil/postcss';
 
-import autoprefixer from 'autoprefixer';
+import * as autoprefixer from 'autoprefixer';
 
-import cssnano from 'cssnano';
+import * as cssnano from 'cssnano';
 
-import tailwindcss from 'tailwindcss';
 
 export const config: Config = {
   namespace: 'personal-wcs',
   taskQueue: 'async',
   plugins: [
     sass(),
-    postcss({
-      plugins: [tailwindcss('./packages/personal-wcs/tailwind.config.js'), autoprefixer(), cssnano()],
-    }),
+//    postcss({
+//      plugins: [autoprefixer(), cssnano()],
+//    }),
   ],
   outputTargets: [
     {

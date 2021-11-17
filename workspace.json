@@ -3,6 +3,7 @@
   "projects": {
     "devops": "packages/devops",
     "personal-e2e": "packages/personal-e2e",
+    "personal-main-wcs": "packages/personal-main-wcs",
     "personal-service": "packages/personal-service",
     "personal-ui": "packages/personal-ui",
     "personal-wcs": "packages/personal-wcs"

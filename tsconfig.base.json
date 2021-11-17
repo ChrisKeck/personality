@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "./target/classes/static/",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
@@ -16,6 +15,7 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
+      "@personal/personal-main-wcs": ["packages/personal-main-wcs/src/index.ts"],
       "@personal/personal-wcs": ["dist/packages/personal-wcs"],
       "@personal/personal-wcs/loader": ["dist/packages/personal-wcs/loader"]
     },
