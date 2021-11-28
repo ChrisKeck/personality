@@ -14,9 +14,10 @@ describe('MetricsComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [MetricsComponent],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [MetricsComponent],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(MetricsComponent, '')
         .compileComponents();
     })

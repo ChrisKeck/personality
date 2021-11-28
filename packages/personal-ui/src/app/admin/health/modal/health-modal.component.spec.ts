@@ -12,10 +12,11 @@ describe('HealthModalComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [HealthModalComponent],
-        providers: [NgbActiveModal],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [HealthModalComponent],
+    providers: [NgbActiveModal],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(HealthModalComponent, '')
         .compileComponents();
     })

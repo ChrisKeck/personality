@@ -29,9 +29,10 @@ describe('Home Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [HomeComponent],
-        providers: [AccountService, Router],
-      })
+    declarations: [HomeComponent],
+    providers: [AccountService, Router],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(HomeComponent, '')
         .compileComponents();
     })

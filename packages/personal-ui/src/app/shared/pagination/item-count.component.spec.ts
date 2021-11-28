@@ -9,8 +9,9 @@ describe('ItemCountComponent test', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [ItemCountComponent],
-      }).compileComponents();
+    declarations: [ItemCountComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
     })
   );
 

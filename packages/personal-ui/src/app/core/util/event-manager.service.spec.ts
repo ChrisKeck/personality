@@ -18,8 +18,9 @@ describe('Event Manager tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [EventManager],
-      });
+    providers: [EventManager],
+    teardown: { destroyAfterEach: false }
+});
       recievedEvent = null;
     });
 

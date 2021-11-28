@@ -11,8 +11,9 @@ describe('Logs Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    imports: [HttpClientTestingModule],
+    teardown: { destroyAfterEach: false }
+});
 
     expectedResult = null;
     service = TestBed.inject(ConfigurationService);

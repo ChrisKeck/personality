@@ -32,10 +32,11 @@ describe('User Management Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [UserManagementComponent],
-        providers: [Router, { provide: ActivatedRoute, useValue: { data, queryParamMap } }, AccountService],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [UserManagementComponent],
+    providers: [Router, { provide: ActivatedRoute, useValue: { data, queryParamMap } }, AccountService],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(UserManagementComponent, '')
         .compileComponents();
     })

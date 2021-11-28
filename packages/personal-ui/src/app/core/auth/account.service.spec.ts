@@ -35,9 +35,10 @@ describe('Account Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
-      providers: [StateStorageService, Router],
-    });
+    imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
+    providers: [StateStorageService, Router],
+    teardown: { destroyAfterEach: false }
+});
 
     service = TestBed.inject(AccountService);
     applicationConfigService = TestBed.inject(ApplicationConfigService);

@@ -14,16 +14,17 @@ describe('PasswordResetFinishComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [PasswordResetFinishComponent],
-      providers: [
+    imports: [HttpClientTestingModule],
+    declarations: [PasswordResetFinishComponent],
+    providers: [
         FormBuilder,
         {
-          provide: ActivatedRoute,
-          useValue: { queryParams: of({ key: 'XYZPDQ' }) },
+            provide: ActivatedRoute,
+            useValue: { queryParams: of({ key: 'XYZPDQ' }) },
         },
-      ],
-    })
+    ],
+    teardown: { destroyAfterEach: false }
+})
       .overrideTemplate(PasswordResetFinishComponent, '')
       .createComponent(PasswordResetFinishComponent);
   });

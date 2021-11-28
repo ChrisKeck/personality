@@ -28,10 +28,11 @@ describe('SettingsComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [SettingsComponent],
-        providers: [FormBuilder, AccountService],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [SettingsComponent],
+    providers: [FormBuilder, AccountService],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(SettingsComponent, '')
         .compileComponents();
     })

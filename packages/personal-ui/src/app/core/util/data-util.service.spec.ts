@@ -7,8 +7,9 @@ describe('Data Utils Service Test', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DataUtils],
-    });
+    providers: [DataUtils],
+    teardown: { destroyAfterEach: false }
+});
     service = TestBed.inject(DataUtils);
   });
 

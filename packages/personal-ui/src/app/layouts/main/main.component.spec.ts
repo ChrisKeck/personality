@@ -24,16 +24,17 @@ describe('MainComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [MainComponent],
-        providers: [
-          Title,
-          AccountService,
-          {
+    declarations: [MainComponent],
+    providers: [
+        Title,
+        AccountService,
+        {
             provide: Router,
             useClass: MockRouter,
-          },
-        ],
-      })
+        },
+    ],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(MainComponent, '')
         .compileComponents();
     })

@@ -14,9 +14,10 @@ describe('Alert Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [AlertComponent],
-        providers: [AlertService],
-      })
+    declarations: [AlertComponent],
+    providers: [AlertService],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(AlertComponent, '')
         .compileComponents();
     })

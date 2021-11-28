@@ -15,10 +15,11 @@ describe('RegisterComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [RegisterComponent],
-        providers: [FormBuilder],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [RegisterComponent],
+    providers: [FormBuilder],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(RegisterComponent, '')
         .compileComponents();
     })

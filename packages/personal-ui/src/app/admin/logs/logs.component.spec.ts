@@ -14,10 +14,11 @@ describe('LogsComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [LogsComponent],
-        providers: [LogsService],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [LogsComponent],
+    providers: [LogsService],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(LogsComponent, '')
         .compileComponents();
     })

@@ -11,8 +11,9 @@ describe('PasswordResetInit Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    imports: [HttpClientTestingModule],
+    teardown: { destroyAfterEach: false }
+});
 
     service = TestBed.inject(PasswordResetInitService);
     applicationConfigService = TestBed.inject(ApplicationConfigService);

@@ -18,18 +18,19 @@ describe('User Management Update Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [UserManagementUpdateComponent],
-        providers: [
-          FormBuilder,
-          {
+    imports: [HttpClientTestingModule],
+    declarations: [UserManagementUpdateComponent],
+    providers: [
+        FormBuilder,
+        {
             provide: ActivatedRoute,
             useValue: {
-              data: of({ user: new User(123, 'user', 'first', 'last', 'first@last.com', true, 'en', [Authority.USER], 'admin') }),
+                data: of({ user: new User(123, 'user', 'first', 'last', 'first@last.com', true, 'en', [Authority.USER], 'admin') }),
             },
-          },
-        ],
-      })
+        },
+    ],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(UserManagementUpdateComponent, '')
         .compileComponents();
     })

@@ -9,8 +9,9 @@ describe('PasswordStrengthBarComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [PasswordStrengthBarComponent],
-      })
+    declarations: [PasswordStrengthBarComponent],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(PasswordStrengthBarComponent, '')
         .compileComponents();
     })

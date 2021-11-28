@@ -13,10 +13,11 @@ describe('PasswordResetInitComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [PasswordResetInitComponent],
-      providers: [FormBuilder],
-    })
+    imports: [HttpClientTestingModule],
+    declarations: [PasswordResetInitComponent],
+    providers: [FormBuilder],
+    teardown: { destroyAfterEach: false }
+})
       .overrideTemplate(PasswordResetInitComponent, '')
       .createComponent(PasswordResetInitComponent);
     comp = fixture.componentInstance;

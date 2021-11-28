@@ -6,8 +6,9 @@ describe('Parse links service test', () => {
   describe('Parse Links Service Test', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [ParseLinks],
-      });
+    providers: [ParseLinks],
+    teardown: { destroyAfterEach: false }
+});
     });
 
     it('should throw an error when passed an empty string', inject([ParseLinks], (service: ParseLinks) => {

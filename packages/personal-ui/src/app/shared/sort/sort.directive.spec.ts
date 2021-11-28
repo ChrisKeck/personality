@@ -26,8 +26,9 @@ describe('Directive: SortDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestSortDirectiveComponent, SortDirective],
-    });
+    declarations: [TestSortDirectiveComponent, SortDirective],
+    teardown: { destroyAfterEach: false }
+});
     fixture = TestBed.createComponent(TestSortDirectiveComponent);
     component = fixture.componentInstance;
     tableRow = fixture.debugElement.query(By.directive(SortDirective));

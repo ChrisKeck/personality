@@ -18,10 +18,11 @@ describe('User Management Delete Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [UserManagementDeleteDialogComponent],
-        providers: [NgbActiveModal],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [UserManagementDeleteDialogComponent],
+    providers: [NgbActiveModal],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(UserManagementDeleteDialogComponent, '')
         .compileComponents();
     })

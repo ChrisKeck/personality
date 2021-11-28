@@ -11,8 +11,9 @@ describe('Password Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    imports: [HttpClientTestingModule],
+    teardown: { destroyAfterEach: false }
+});
 
     service = TestBed.inject(PasswordService);
     applicationConfigService = TestBed.inject(ApplicationConfigService);

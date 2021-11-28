@@ -15,9 +15,10 @@ describe('Page Ribbon Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [PageRibbonComponent],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [PageRibbonComponent],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(PageRibbonComponent, '')
         .compileComponents();
     })

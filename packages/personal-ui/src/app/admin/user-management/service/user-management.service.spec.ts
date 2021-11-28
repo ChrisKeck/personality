@@ -13,8 +13,9 @@ describe('User Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    imports: [HttpClientTestingModule],
+    teardown: { destroyAfterEach: false }
+});
 
     service = TestBed.inject(UserManagementService);
     httpMock = TestBed.inject(HttpTestingController);

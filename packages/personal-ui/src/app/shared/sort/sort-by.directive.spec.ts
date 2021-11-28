@@ -37,8 +37,9 @@ describe('Directive: SortByDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestSortByDirectiveComponent, SortDirective, SortByDirective, FaIconComponent],
-    });
+    declarations: [TestSortByDirectiveComponent, SortDirective, SortByDirective, FaIconComponent],
+    teardown: { destroyAfterEach: false }
+});
     fixture = TestBed.createComponent(TestSortByDirectiveComponent);
     component = fixture.componentInstance;
     tableHead = fixture.debugElement.query(By.directive(SortByDirective));

@@ -7,7 +7,7 @@ describe('Alert service test', () => {
     let extAlerts: Alert[];
 
     beforeEach(() => {
-      TestBed.configureTestingModule({});
+      TestBed.configureTestingModule({ teardown: { destroyAfterEach: false } });
       jest.useFakeTimers();
       extAlerts = [];
     });

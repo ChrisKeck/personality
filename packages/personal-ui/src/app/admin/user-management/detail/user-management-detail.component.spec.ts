@@ -14,16 +14,17 @@ describe('User Management Detail Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [UserManagementDetailComponent],
-        providers: [
-          {
+    declarations: [UserManagementDetailComponent],
+    providers: [
+        {
             provide: ActivatedRoute,
             useValue: {
-              data: of({ user: new User(123, 'user', 'first', 'last', 'first@last.com', true, 'en', [Authority.USER], 'admin') }),
+                data: of({ user: new User(123, 'user', 'first', 'last', 'first@last.com', true, 'en', [Authority.USER], 'admin') }),
             },
-          },
-        ],
-      })
+        },
+    ],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(UserManagementDetailComponent, '')
         .compileComponents();
     })

@@ -25,9 +25,10 @@ describe('HasAnyAuthorityDirective tests', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [HasAnyAuthorityDirective, TestHasAnyAuthorityDirectiveComponent],
-        providers: [AccountService],
-      });
+    declarations: [HasAnyAuthorityDirective, TestHasAnyAuthorityDirectiveComponent],
+    providers: [AccountService],
+    teardown: { destroyAfterEach: false }
+});
     })
   );
 

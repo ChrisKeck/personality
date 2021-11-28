@@ -11,8 +11,9 @@ describe('ActivateService Service', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    imports: [HttpClientTestingModule],
+    teardown: { destroyAfterEach: false }
+});
 
     service = TestBed.inject(ActivateService);
     applicationConfigService = TestBed.inject(ApplicationConfigService);

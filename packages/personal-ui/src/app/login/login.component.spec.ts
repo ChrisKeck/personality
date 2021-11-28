@@ -23,19 +23,20 @@ describe('LoginComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [LoginComponent],
-        providers: [
-          FormBuilder,
-          AccountService,
-          Router,
-          {
+    declarations: [LoginComponent],
+    providers: [
+        FormBuilder,
+        AccountService,
+        Router,
+        {
             provide: LoginService,
             useValue: {
-              login: jest.fn(() => of({})),
+                login: jest.fn(() => of({})),
             },
-          },
-        ],
-      })
+        },
+    ],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(LoginComponent, '')
         .compileComponents();
     })

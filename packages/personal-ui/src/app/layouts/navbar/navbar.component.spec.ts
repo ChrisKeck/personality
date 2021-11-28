@@ -34,10 +34,11 @@ describe('Navbar Component', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
-        declarations: [NavbarComponent],
-        providers: [Router, LoginService],
-      })
+    imports: [HttpClientTestingModule, NgxWebstorageModule.forRoot()],
+    declarations: [NavbarComponent],
+    providers: [Router, LoginService],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(NavbarComponent, '')
         .compileComponents();
     })

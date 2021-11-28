@@ -15,9 +15,10 @@ describe('HealthComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [HealthComponent],
-      })
+    imports: [HttpClientTestingModule],
+    declarations: [HealthComponent],
+    teardown: { destroyAfterEach: false }
+})
         .overrideTemplate(HealthComponent, '')
         .compileComponents();
     })
